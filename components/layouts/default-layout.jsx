@@ -1,5 +1,6 @@
 import React from "react";
-import Footer from "./module/footer";
+import FooterTop from "./module/footerTop";
+import FooterBottom from "./module/footerBottom";
 import HeaderMain from "./module/header";
 import Heads from "./module/head";
 
@@ -9,7 +10,8 @@ export default function DefaultLayout({ children }) {
       <Heads />
       <HeaderMain />
       {children}
-      <Footer />
+      <FooterTop />
+      <FooterBottom />
     </div>
   );
 }
