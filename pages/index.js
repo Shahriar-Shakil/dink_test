@@ -4,8 +4,8 @@ import PrivacyPolicy from "../components/partials/privacyPolicy";
 
 export default function Home() {
   return (
-  <DefaultLayout>
-    <PrivacyPolicy />
-  </DefaultLayout>
+    <DefaultLayout>
+      <PrivacyPolicy />
+    </DefaultLayout>
   );
 }
