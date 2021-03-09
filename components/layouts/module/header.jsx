@@ -4,14 +4,16 @@ import Link from "next/link";
 export default function HeaderMain() {
   return (
     <StyledHeader className="">
-      <div className="header_logo text-center">
-        <Link href="/">
-          <a className="">DINK</a>
-        </Link>
-      </div>
-      <div className="header_nav">
-        <nav>
-          <ul>
+      <div className="container d-flex align-items-center py-3">
+        <Logo className="header_logo text-center">
+          <Link href="/">
+            <a className="">
+              DINK <sup> &#174;</sup>
+            </a>
+          </Link>
+        </Logo>
+        <HeaderNav>
+          <ul className="m-0 d-flex">
             <li>
               <Link href="/">
                 <a>
@@ -61,19 +63,19 @@ export default function HeaderMain() {
               </Link>
             </li>
           </ul>
-        </nav>
-      </div>
-      <div className="header_actions d-flex align-items-center">
-        <Link href="/">
-          <a>
-            <i className="fa fa-user" aria-hidden="true"></i>
-          </a>
-        </Link>
-        <Link href="/">
-          <a>
-            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-          </a>
-        </Link>
+        </HeaderNav>
+        <HeaderActions className=" d-flex align-items-center">
+          <Link href="/">
+            <a>
+              <i className="fa fa-user" aria-hidden="true"></i>
+            </a>
+          </Link>
+          <Link href="/">
+            <a>
+              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+          </Link>
+        </HeaderActions>
       </div>
     </StyledHeader>
   );
@@ -81,46 +83,59 @@ export default function HeaderMain() {
 
 const StyledHeader = styled.header`
   background-color: ${(props) => props.theme.color1st};
-  padding: 0.5rem 1rem;
-  display: flex;
-  .header_logo {
-    width: 200px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #fff;
-
-    a {
-      text-decoration: none;
-    }
+  .container {
+    max-width: 1266px;
   }
-  .header_nav {
-    flex-grow: 1;
-    ul {
-      list-style-type: none;
+`;
+const Logo = styled.div`
+  width: 200px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
 
-      li {
-        float: left;
-        padding: 0 1rem;
+  a {
+    text-decoration: none;
+    display: content;
+  }
+`;
+const HeaderNav = styled.nav`
+  flex-grow: 1;
+  ul {
+    list-style-type: none;
+
+    li {
+      /* flex-basis: 150px; */
+      /* flex-basis: 150px;
+      max-width: 150px; */
+      /* width: calc(100% / 6); */
+      padding: 0 0.5rem;
+      flex-shrink: 2;
+      a {
+        text-decoration: none;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 70px 70px 70px 70px;
+        border: 1px solid #0b0b0b00;
+        box-shadow: 2px 1px 2px 1px rgba(230, 212, 212, 0.77);
+        transition: 0.3s;
+        i {
+          padding: 0 0.5rem;
+        }
+      }
+      :hover {
         a {
-          text-decoration: none;
-          color: #fff;
-          padding: 1rem;
-          border-radius: 70px 70px 70px 70px;
-
-          border: 1px solid #0b0b0b00;
-          box-shadow: 2px 1px 2px 1px rgb(66 64 64 / 32%);
-          i {
-            padding: 0 0.5rem;
-          }
+          box-shadow: 2px 1px 2px 1px rgba(88, 88, 88, 0.77);
         }
       }
     }
   }
-  .header_actions {
-    width: 100px;
-    a {
-      padding: 0 1rem;
-      color: #fff;
-    }
+`;
+
+const HeaderActions = styled.div`
+  a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 2rem;
   }
 `;

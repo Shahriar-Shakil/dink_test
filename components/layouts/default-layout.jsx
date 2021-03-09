@@ -1,8 +1,8 @@
 import React from "react";
-import FooterTop from "./module/footerTop";
-import FooterBottom from "./module/footerBottom";
+
 import HeaderMain from "./module/header";
 import Heads from "./module/head";
+import DefaultFooter from "./module/default-footer";
 
 export default function DefaultLayout({ children }) {
   return (
@@ -10,8 +10,7 @@ export default function DefaultLayout({ children }) {
       <Heads />
       <HeaderMain />
       {children}
-      <FooterTop />
-      <FooterBottom />
+      <DefaultFooter />
     </div>
   );
 }
