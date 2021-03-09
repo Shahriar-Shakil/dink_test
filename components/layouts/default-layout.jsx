@@ -1,6 +1,6 @@
 import React from "react";
 
-import HeaderMain from "./module/header";
+import HeaderMain from "./headers/header";
 import Heads from "./module/head";
 import DefaultFooter from "./module/default-footer";
 
